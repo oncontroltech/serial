@@ -188,6 +188,23 @@ public:
   /*! Destructor */
   virtual ~Serial ();
 
+  void
+  SetSerialHandler(
+#ifdef _WIN32
+#error "Not yet implemented"
+#elif __unix__
+    int
+#endif
+    fd
+  );
+
+#ifdef _WIN32
+#error "Not yet implemented"
+#elif __unix__
+  int
+#endif
+  GetSerialHandler() const;
+
   /*!
    * Opens the serial port as long as the port is set and the port isn't
    * already open.

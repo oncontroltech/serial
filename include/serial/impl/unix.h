@@ -92,6 +92,12 @@ public:
   void
   waitByteTimes (size_t count);
 
+  void
+  SetSerialHandler(int fd);
+
+  int
+  GetSerialHandler() const;
+
   size_t
   read (uint8_t *buf, size_t size = 1);
 

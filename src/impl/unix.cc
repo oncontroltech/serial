@@ -534,6 +534,18 @@ Serial::SerialImpl::waitByteTimes (size_t count)
   pselect (0, NULL, NULL, NULL, &wait_time, NULL);
 }
 
+void
+Serial::SerialImpl::SetSerialHandler(int fd)
+{
+  fd_ = fd;
+}
+
+int
+Serial::SerialImpl::GetSerialHandler() const
+{
+  return fd_;
+}
+
 size_t
 Serial::SerialImpl::read (uint8_t *buf, size_t size)
 {

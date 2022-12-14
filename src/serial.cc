@@ -114,6 +114,18 @@ Serial::waitByteTimes (size_t count)
   pimpl_->waitByteTimes(count);
 }
 
+void
+Serial::SetSerialHandler (int fd)
+{
+  pimpl_->SetSerialHandler(fd);
+}
+
+int
+Serial::GetSerialHandler () const
+{
+  return pimpl_->GetSerialHandler();
+}
+
 size_t
 Serial::read_ (uint8_t *buffer, size_t size)
 {
